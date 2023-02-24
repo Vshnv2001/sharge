@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sharge/loginpage.dart';
 
 class EVOwnerSignupPage extends StatelessWidget {
   @override
@@ -26,7 +27,12 @@ class EVOwnerSignupPage extends StatelessWidget {
             SizedBox(height: 16.0),
             ElevatedButton(
               child: Text('Submit'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
             ),
           ],
         ),

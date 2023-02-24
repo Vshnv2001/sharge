@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sharge/loginpage.dart';
 
 class EVHostSignupPage extends StatefulWidget {
   const EVHostSignupPage({super.key});
@@ -12,6 +13,7 @@ class _EVHostSignupPageState extends State<EVHostSignupPage> {
   String _firstName = "";
   String _lastName = "";
   String _address = "";
+  String _email = "";
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +50,21 @@ class _EVHostSignupPageState extends State<EVHostSignupPage> {
                 });
               },
             ),
+            TextFormField(
+              decoration: InputDecoration(labelText: 'Email Address'),
+              onChanged: (value) {
+                setState(() {
+                  _address = value;
+                });
+              },
+            ),
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                //TODO: Handle Signup
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
               },
               child: Text('Signup'),
             ),
